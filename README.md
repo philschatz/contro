@@ -49,11 +49,12 @@ const gamepad = new Gamepad()
 
 ```js
 const controls = {
-  jump: or(gamepad.button('A').trigger, keyboard.key('Space').trigger),
-  menu: or(gamepad.button('Back').trigger, keyboard.key('Esc').trigger),
-  inventory: or(gamepad.button('LB').trigger, keyboard.key('E').trigger),
-  map: or(gamepad.button('RB').trigger, keyboard.key('M').trigger),
-  statusOverlay: or(gamepad.button('RB'), keyboard.key('Tab')),
+  left: or(gamepad.button('ARROW_LEFT').trigger, keyboard.key('A').trigger),
+  jump: or(gamepad.button('ACTION_BOTTOM').trigger, keyboard.key('Space').trigger),
+  menu: or(gamepad.button('START').trigger, keyboard.key('Esc').trigger),
+  inventory: or(gamepad.button('BUMPER_LEFT_ONE').trigger, keyboard.key('E').trigger),
+  map: or(gamepad.button('BUMPER_RIGHT_ONE').trigger, keyboard.key('M').trigger),
+  statusOverlay: or(gamepad.button('BUMPER_RIGHT_TWO'), keyboard.key('Tab')),
 }
 ```
 

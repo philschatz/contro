@@ -5,6 +5,7 @@ import { store } from '../index'
 import { Vector2 } from '../utils/math'
 import { MockEventTarget } from '../utils/mock'
 import { Gamepad } from './gamepad'
+import { BUTTON_TYPE, findButtonNumber, STICK_TYPE } from '../maps/gamepad';
 
 class MockWindow extends MockEventTarget implements IWindow {}
 
@@ -97,11 +98,11 @@ describe('The `Gamepad` class', () => {
     describe('should have an `button()` method that returns a component that', () => {
 
       it('when queried `false`', () => {
-        expect(gamepad.button(0).query()).to.equal(false)
+        expect(gamepad.button(BUTTON_TYPE.ARROW_UP).query()).to.equal(false)
       })
 
       it('when queried in `trigger` moder returns `false`', () => {
-        expect(gamepad.button(0).trigger.query()).to.equal(false)
+        expect(gamepad.button(BUTTON_TYPE.ARROW_UP).trigger.query()).to.equal(false)
       })
 
     })
@@ -111,16 +112,18 @@ describe('The `Gamepad` class', () => {
   describe('in its connected state', () => {
 
     const { win, nav, gamepad } = mockPack()
+    const controllerId = '[temp xbox id]'
+    const upButtonIndex = findButtonNumber(controllerId, BUTTON_TYPE.ARROW_UP)
 
     before(() => {
+      const buttons = []
+      buttons[upButtonIndex] = {pressed: false}
+
       nav.gamepads[0] = {
+        id: controllerId,
         index: 0,
-        buttons: [
-          {
-            pressed: false,
-          },
-        ],
-        axes: [0, 0, 0, 0],
+        buttons: buttons,
+        axes: [0, 0, 0, 0, 0, 0],
         connected: true,
         timestamp: 0,
         mapping: 'standard',
@@ -135,28 +138,28 @@ describe('The `Gamepad` class', () => {
     describe('should have a `button()` method that returns a component that', () => {
 
       it('returns `false` when the button is not pressed', () => {
-        expect(gamepad.button(0).query()).to.equal(false)
+        expect(gamepad.button(BUTTON_TYPE.ARROW_UP).query()).to.equal(false)
       })
 
       it('returns `true` when the button is pressed', () => {
-        nav.gamepads[0].buttons[0].pressed = true
-        expect(gamepad.button(0).query()).to.equal(true)
+        nav.gamepads[0].buttons[upButtonIndex].pressed = true
+        expect(gamepad.button(BUTTON_TYPE.ARROW_UP).query()).to.equal(true)
       })
 
       describe('when queried in `trigger` mode', () => {
 
         it('returns `false` when the key is not pressed', () => {
-          nav.gamepads[0].buttons[0].pressed = false
-          expect(gamepad.button(0).trigger.query()).to.equal(false)
+          nav.gamepads[0].buttons[upButtonIndex].pressed = false
+          expect(gamepad.button(BUTTON_TYPE.ARROW_UP).trigger.query()).to.equal(false)
         })
 
         it('returns `true` once after the key was pressed', () => {
-          nav.gamepads[0].buttons[0].pressed = true
-          expect(gamepad.button(0).trigger.query()).to.equal(true)
+          nav.gamepads[0].buttons[upButtonIndex].pressed = true
+          expect(gamepad.button(BUTTON_TYPE.ARROW_UP).trigger.query()).to.equal(true)
         })
 
         it('returns `false` after the key state was queried', () => {
-          expect(gamepad.button(0).trigger.query()).to.equal(false)
+          expect(gamepad.button(BUTTON_TYPE.ARROW_UP).trigger.query()).to.equal(false)
         })
 
       })
@@ -166,23 +169,17 @@ describe('The `Gamepad` class', () => {
     describe('should have a `stick()` method that returns a component that', () => {
 
       it('throws an error when initialized with an invalid stick', () => {
-        expect(() => gamepad.stick('lol')).to.throw(Error, 'Gamepad stick "lol" not found!')
+        expect(() => gamepad.stick('lol')).to.throw(Error)
       })
 
       it('returns a (0, 0) vector when initially queried', () => {
-        expect(gamepad.stick('left').query()).to.deep.equal(new Vector2())
+        expect(gamepad.stick(STICK_TYPE.LEFT).query()).to.deep.equal(new Vector2())
       })
 
       it('returns the correct vector when queried after change', () => {
         nav.gamepads[0].axes[0] = .56
         nav.gamepads[0].axes[1] = .31
-        expect(gamepad.stick('left').query()).to.deep.equal(new Vector2(.56, .31))
-      })
-
-      it('also works with custom axis numbers', () => {
-        nav.gamepads[0].axes[2] = .42
-        nav.gamepads[0].axes[3] = .69
-        expect(gamepad.stick({ label: '', xAxis: 2, yAxis: 3 }).query()).to.deep.equal(new Vector2(.42, .69))
+        expect(gamepad.stick(STICK_TYPE.LEFT).query()).to.deep.equal(new Vector2(.56, .31))
       })
 
     })

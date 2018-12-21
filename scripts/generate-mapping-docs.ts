@@ -1,6 +1,6 @@
 import * as fs from 'fs-extra'
 import * as path from 'path'
-import { buttonMap } from '../src/maps/gamepad'
+import { controllerConfigs } from '../src/configs'
 import { keyMap } from '../src/maps/keyboard'
 
 function generateMappingDocs() {
@@ -36,15 +36,8 @@ async function generateKeyboardKeyDocs() {
 async function generateGamepadButtonDocs() {
 
   const lines: string[] = []
-  let buttonNumber = 0
-  for (const buttonAliases of buttonMap) {
-    const buttonLabel = buttonAliases[0]
-    lines.push([
-      `\`${buttonNumber}\``,
-      `<kbd>${buttonLabel}</kbd>`,
-      `${buttonAliases.map(buttonAlias => `\`${buttonAlias}\``).join(' , ')}`,
-    ].join('|'))
-    buttonNumber++
+  for (const buttonLabel of Object.keys(controllerConfigs[0].buttons)) {
+    lines.push(`<kbd>${buttonLabel}</kbd>`)
   }
 
   saveLines('gamepad-buttons.md', lines)
@@ -56,8 +49,8 @@ async function saveLines(file: string, lines: string[]) {
   const filePath = path.join(__dirname, '../docs', file)
   const fileContent = await fs.readFile(filePath, 'utf-8')
   const newFileContent = fileContent.replace(
-    /(---\|---\|---\n)([\s\S]*)(\n\n)/gm,
-    `$1${lines.join('\n')}$3`,
+    /(<!--buttons-->)([\s\S]*)(\n\n)/gm,
+    `$1\n${lines.join('\n')}$3`,
   )
   await fs.writeFile(filePath, newFileContent)
 

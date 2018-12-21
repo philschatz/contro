@@ -8,3 +8,5 @@ export { Gamepad } from './inputs/gamepad'
 
 export { and } from './core/and'
 export { or } from './core/or'
+
+export { BUTTON_TYPE, STICK_TYPE } from './maps/gamepad'

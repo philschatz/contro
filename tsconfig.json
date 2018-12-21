@@ -3,6 +3,8 @@
     "module": "commonjs",
     "target": "ES2016",
     "noImplicitAny": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
     "declaration": true,
     "outDir": "./disto/"
   },

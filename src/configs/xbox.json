@@ -1,0 +1,27 @@
+{
+  "id": "[temp xbox id]",
+  "buttons": {
+    "ARROW_UP": 12,
+    "ARROW_DOWN": 13,
+    "ARROW_LEFT": 14,
+    "ARROW_RIGHT": 15,
+    "HOME": 16,
+    "START": 9,
+    "SELECT": 8,
+    "ACTION_TOP": 3,
+    "ACTION_LEFT": 2,
+    "ACTION_RIGHT": 1,
+    "ACTION_BOTTOM": 0,
+    "BUMPER_LEFT_ONE": 4,
+    "BUMPER_LEFT_TWO": 6,
+    "BUMPER_RIGHT_ONE": 5,
+    "BUMPER_RIGHT_TWO": 7,
+    "ACTION_STICK_LEFT": 10,
+    "ACTION_STICK_RIGHT": 11
+  },
+  "sticks": {
+    "LEFT": {"xAxis": 0, "yAxis": 1},
+    "RIGHT": {"xAxis": 2, "yAxis": 3}
+  },
+  "analogs": {}
+}

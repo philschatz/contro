@@ -23,6 +23,7 @@ export interface INavigator {
 
 export interface IGamepad {
   index: number
+  id: string
   buttons: IGamepadButton[]
   axes: number[]
   connected: boolean

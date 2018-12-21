@@ -17,7 +17,7 @@ Creates a new `Gamepad` instance.
 
 When `.query()`-ed returns whether the button is currently pressed.
 
-* `button` is the index of the gamepad button
+* `button` is the indentifier of the gamepad button. See [Gamepad Buttons][gamepad-buttons] for valid buttons.
 
 ---
 
@@ -34,4 +34,19 @@ When `.query()`-ed returns a `Vector2` of the current position of the stick.
 
 Returns whether a gamepad is currently connected.
 
+---
+
+#### `hasButton(buttonId)`
+
+Returns whether a gamepad has a particular button available.
+
+---
+
+#### `hasStick(stickId)`
+
+Returns whether a gamepad has a particular stick available.
+
+
+
 [gamepad-api]: https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API
+[gamepad-buttons]: ../gamepad-buttons.md

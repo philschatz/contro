@@ -1,7 +1,7 @@
 import { IGamepad, INavigator, IWindow  } from '../apis'
 import { Control, TriggerControl  } from '../core/control'
 import { store } from '../index'
-import { findButtonNumber, getButtonLabel } from '../maps/gamepad'
+import { BUTTON_TYPE, findButtonNumber, findStickNumbers, STICK_TYPE } from '../maps/gamepad'
 import { Vector2 } from '../utils/math'
 
 export interface GamepadStick {
@@ -10,11 +10,6 @@ export interface GamepadStick {
   xAxis: number
   yAxis: number
 
-}
-
-const gamepadSticks: { [id: string]: GamepadStick } = {
-  left: { label: 'Left stick', xAxis: 0, yAxis: 1 },
-  right: { label: 'Right stick', xAxis: 2, yAxis: 3 },
 }
 
 export class Gamepad {
@@ -56,6 +51,14 @@ export class Gamepad {
     return this.gamepadIndex !== undefined && this.gamepad.connected
   }
 
+  public hasButton(id: BUTTON_TYPE) {
+    return this.isConnected() && typeof findButtonNumber(this.gamepad.id, id) !== 'undefined'
+  }
+
+  public hasStick(id: STICK_TYPE) {
+    return this.isConnected() && typeof findStickNumbers(this.gamepad.id, id) !== 'undefined'
+  }
+
   private get gamepad(): IGamepad {
     const gamepad = this.navigator.getGamepads()[this.gamepadIndex]
     /* istanbul ignore next */
@@ -64,14 +67,14 @@ export class Gamepad {
     return gamepad
   }
 
-  public button(button: number | string): TriggerControl<boolean> {
+  public button(button: BUTTON_TYPE): TriggerControl<boolean> {
     const that = this
-    const buttonNumber = findButtonNumber(button)
     return {
-      label: getButtonLabel(buttonNumber),
+      label: button,
       fromGamepad: true,
       query() {
         if (!that.isConnected()) return false
+        const buttonNumber = findButtonNumber(that.gamepad.id, button)
         if (!this.hasOwnProperty('trigger')) {
           /* istanbul ignore else */
           if (that.gamepad.buttons[buttonNumber].pressed) {
@@ -94,23 +97,13 @@ export class Gamepad {
     }
   }
 
-  public stick(stick: string | GamepadStick): Control<Vector2> {
-    let gpStick: GamepadStick
-    if (typeof stick === 'string') {
-      if (stick in gamepadSticks) {
-        gpStick = gamepadSticks[stick]
-      } else {
-        throw new Error(`Gamepad stick "${stick}" not found!`)
-      }
-    } else {
-      gpStick = stick
-    }
-
+  public stick(stick: STICK_TYPE): Control<Vector2> {
     const {gamepad} = this
+    const {xAxis, yAxis} = findStickNumbers(gamepad.id, stick)
     return {
-      label: gpStick.label,
+      label: stick,
       query() {
-        return new Vector2(gamepad.axes[gpStick.xAxis], gamepad.axes[gpStick.yAxis])
+        return new Vector2(gamepad.axes[xAxis], gamepad.axes[yAxis])
       },
     }
   }

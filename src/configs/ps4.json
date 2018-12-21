@@ -1,0 +1,31 @@
+{
+  "id": "54c-9cc-Wireless Controller",
+  "buttons": {
+    "ARROW_UP": 14,
+    "ARROW_DOWN": 15,
+    "ARROW_LEFT": 16,
+    "ARROW_RIGHT": 17,
+    "HOME": 12,
+    "START": 9,
+    "SELECT": 8,
+    "ACTION_TOP": 3,
+    "ACTION_LEFT": 0,
+    "ACTION_RIGHT": 2,
+    "ACTION_BOTTOM": 1,
+    "BUMPER_LEFT_ONE": 4,
+    "BUMPER_LEFT_TWO": 6,
+    "BUMPER_RIGHT_ONE": 5,
+    "BUMPER_RIGHT_TWO": 7,
+    "ACTION_STICK_LEFT": 10,
+    "ACTION_STICK_RIGHT": 11,
+    "ACTION_TOUCHSCREEN": 13
+  },
+  "sticks": {
+    "LEFT": {"xAxis": 0, "yAxis": 1},
+    "RIGHT": {"xAxis": 2, "yAxis": 5}
+  },
+  "analogs": {
+    "BUMPER_LEFT": 3,
+    "BUMPER_RIGHT": 4
+  }
+}
