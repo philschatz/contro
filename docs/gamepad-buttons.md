@@ -12,16 +12,16 @@ This is a table of all the supported buttons that you can pass to `Gamepad.butto
 <kbd>HOME</kbd>
 <kbd>START</kbd>
 <kbd>SELECT</kbd>
-<kbd>ACTION_TOP</kbd>
-<kbd>ACTION_LEFT</kbd>
-<kbd>ACTION_RIGHT</kbd>
-<kbd>ACTION_BOTTOM</kbd>
-<kbd>BUMPER_LEFT_ONE</kbd>
-<kbd>BUMPER_LEFT_TWO</kbd>
-<kbd>BUMPER_RIGHT_ONE</kbd>
-<kbd>BUMPER_RIGHT_TWO</kbd>
-<kbd>ACTION_STICK_LEFT</kbd>
-<kbd>ACTION_STICK_RIGHT</kbd>
-<kbd>ACTION_TOUCHSCREEN</kbd>
+<kbd>CLUSTER_TOP</kbd>
+<kbd>CLUSTER_LEFT</kbd>
+<kbd>CLUSTER_RIGHT</kbd>
+<kbd>CLUSTER_BOTTOM</kbd>
+<kbd>BUMPER_TOP_LEFT</kbd>
+<kbd>BUMPER_BOTTOM_LEFT</kbd>
+<kbd>BUMPER_TOP_RIGHT</kbd>
+<kbd>BUMPER_BOTTOM_RIGHT</kbd>
+<kbd>STICK_PRESS_LEFT</kbd>
+<kbd>STICK_PRESS_RIGHT</kbd>
+<kbd>TOUCHSCREEN</kbd>
 
 *This table was [automatically generated](../scripts/generate-mapping-docs.ts).*

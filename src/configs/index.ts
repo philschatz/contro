@@ -20,17 +20,17 @@ interface Mapping {
     HOME?: number
     START?: number
     SELECT?: number
-    ACTION_TOP?: number
-    ACTION_LEFT?: number
-    ACTION_RIGHT?: number
-    ACTION_BOTTOM?: number
-    BUMPER_LEFT_ONE?: number
-    BUMPER_LEFT_TWO?: number
-    BUMPER_RIGHT_ONE?: number
-    BUMPER_RIGHT_TWO?: number
-    ACTION_STICK_LEFT?: number
-    ACTION_STICK_RIGHT?: number
-    ACTION_TOUCHSCREEN?: number,
+    CLUSTER_TOP?: number
+    CLUSTER_LEFT?: number
+    CLUSTER_RIGHT?: number
+    CLUSTER_BOTTOM?: number
+    BUMPER_TOP_LEFT?: number
+    BUMPER_BOTTOM_LEFT?: number
+    BUMPER_TOP_RIGHT?: number
+    BUMPER_BOTTOM_RIGHT?: number
+    STICK_PRESS_LEFT?: number
+    STICK_PRESS_RIGHT?: number
+    TOUCHSCREEN?: number,
   },
   sticks: {
     LEFT?: StickIndexes
