@@ -1,4 +1,6 @@
+import { IGamepad } from '../apis';
 import { controllerConfigs } from '../configs'
+import standardMapping from '../configs/standard'
 
 export enum BUTTON_TYPE {
   'ARROW_UP' = 'ARROW_UP',
@@ -29,12 +31,24 @@ export enum ANALOG_TYPE {
   'BUMPER_RIGHT' = 'BUMPER_RIGHT',
 }
 
-export function findButtonNumber(gamepadId: string, button: BUTTON_TYPE) {
-  const mapping = controllerConfigs.find(({id}) => gamepadId === id)
+export function findButtonNumber(gamepad: IGamepad, button: BUTTON_TYPE) {
+  if (gamepad.mapping === 'standard') {
+    return standardMapping.buttons[button]
+  }
+  const mapping = controllerConfigs.find(({id}) => gamepad.id === id)
+  if (!mapping) {
+    throw new Error(`Unsupported gamepad "${gamepad.id}"`)
+  }
   return mapping.buttons[button]
 }
 
-export function findStickNumbers(gamepadId: string, stick: STICK_TYPE) {
-  const mapping = controllerConfigs.find(({id}) => gamepadId === id)
+export function findStickNumbers(gamepad: IGamepad, stick: STICK_TYPE) {
+  if (gamepad.mapping === 'standard') {
+    return standardMapping.sticks[stick]
+  }
+  const mapping = controllerConfigs.find(({id}) => gamepad.id === id)
+  if (!mapping) {
+    throw new Error(`Unsupported gamepad "${gamepad.id}"`)
+  }
   return mapping.sticks[stick]
 }

@@ -1,16 +1,17 @@
 /* Mappings for all supported controllers.
  * To add a new controller, add a new JSON file and update the entry at the bottom of this file.
  */
-import c1 = require('./ps3')
-import c2 = require('./ps4')
-import c3 = require('./xbox')
+import c1 from './ps3'
+import c2 from './ps4'
+import c3 from './standard'
+import c4 from './xbox'
 
-interface StickIndexes {
+export interface StickIndexes {
   xAxis: number
   yAxis: number
 }
 
-interface Mapping {
+export interface GamepadMapping {
   id: string
   buttons: {
     ARROW_UP?: number
@@ -46,4 +47,5 @@ export const controllerConfigs = [
   c2, // Use PS4 first for documentation-generation
   c1,
   c3,
-] as Mapping[]
+  c4,
+] as GamepadMapping[]

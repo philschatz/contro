@@ -74,7 +74,7 @@ export class Gamepad {
       fromGamepad: true,
       query() {
         if (!that.isConnected()) return false
-        const buttonNumber = findButtonNumber(that.gamepad.id, button)
+        const buttonNumber = findButtonNumber(that.gamepad, button)
         if (!this.hasOwnProperty('trigger')) {
           /* istanbul ignore else */
           if (that.gamepad.buttons[buttonNumber].pressed) {
@@ -99,7 +99,7 @@ export class Gamepad {
 
   public stick(stick: STICK_TYPE): Control<Vector2> {
     const {gamepad} = this
-    const {xAxis, yAxis} = findStickNumbers(gamepad.id, stick)
+    const {xAxis, yAxis} = findStickNumbers(gamepad, stick)
     return {
       label: stick,
       query() {
