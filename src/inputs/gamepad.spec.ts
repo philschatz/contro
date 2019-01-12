@@ -21,6 +21,7 @@ class MockNavigator extends MockEventTarget implements INavigator {
 
 class MockGamepad implements IGamepad {
 
+  public id = 'test_gamepad'
   public index: number = 0
   public buttons: IGamepadButton[] = []
   public axes: number[] = []
@@ -113,7 +114,7 @@ describe('The `Gamepad` class', () => {
 
     const { win, nav, gamepad } = mockPack()
     const controllerId = '[temp xbox id]'
-    const upButtonIndex = findButtonNumber(controllerId, BUTTON_TYPE.ARROW_UP)
+    const upButtonIndex = findButtonNumber(new MockGamepad(), BUTTON_TYPE.ARROW_UP)
 
     before(() => {
       const buttons = []
