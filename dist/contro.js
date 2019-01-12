@@ -1,6 +1,6 @@
 /*!
  * Contro
- * (c) 2018 Niklas Higi
+ * (c) 2019 Niklas Higi
  * Released under the MIT License.
  */
 (function (global, factory) {
@@ -243,119 +243,119 @@
   }
 
   var c1 = {
-      "id": "54c-268-PLAYSTATION(R)3 Controller",
-      "buttons": {
-          "ARROW_UP": 4,
-          "ARROW_DOWN": 6,
-          "ARROW_LEFT": 7,
-          "ARROW_RIGHT": 5,
-          "HOME": 16,
-          "START": 3,
-          "SELECT": 0,
-          "CLUSTER_TOP": 12,
-          "CLUSTER_LEFT": 15,
-          "CLUSTER_RIGHT": 13,
-          "CLUSTER_BOTTOM": 14,
-          "BUMPER_TOP_LEFT": 10,
-          "BUMPER_BOTTOM_LEFT": 8,
-          "BUMPER_TOP_RIGHT": 11,
-          "BUMPER_BOTTOM_RIGHT": 9,
-          "STICK_PRESS_LEFT": 1,
-          "STICK_PRESS_RIGHT": 2
+      id: '54c-268-PLAYSTATION(R)3 Controller',
+      buttons: {
+          ARROW_UP: 4,
+          ARROW_DOWN: 6,
+          ARROW_LEFT: 7,
+          ARROW_RIGHT: 5,
+          HOME: 16,
+          START: 3,
+          SELECT: 0,
+          CLUSTER_TOP: 12,
+          CLUSTER_LEFT: 15,
+          CLUSTER_RIGHT: 13,
+          CLUSTER_BOTTOM: 14,
+          BUMPER_TOP_LEFT: 10,
+          BUMPER_BOTTOM_LEFT: 8,
+          BUMPER_TOP_RIGHT: 11,
+          BUMPER_BOTTOM_RIGHT: 9,
+          STICK_PRESS_LEFT: 1,
+          STICK_PRESS_RIGHT: 2,
       },
-      "sticks": {
-          "LEFT": { "xAxis": 0, "yAxis": 1 },
-          "RIGHT": { "xAxis": 2, "yAxis": 3 }
+      sticks: {
+          LEFT: { xAxis: 0, yAxis: 1 },
+          RIGHT: { xAxis: 2, yAxis: 3 },
       },
-      "analogs": {}
+      analogs: {},
   };
 
   var c2 = {
-      "id": "54c-9cc-Wireless Controller",
-      "buttons": {
-          "ARROW_UP": 14,
-          "ARROW_DOWN": 15,
-          "ARROW_LEFT": 16,
-          "ARROW_RIGHT": 17,
-          "HOME": 12,
-          "START": 9,
-          "SELECT": 8,
-          "CLUSTER_TOP": 3,
-          "CLUSTER_LEFT": 0,
-          "CLUSTER_RIGHT": 2,
-          "CLUSTER_BOTTOM": 1,
-          "BUMPER_TOP_LEFT": 4,
-          "BUMPER_BOTTOM_LEFT": 6,
-          "BUMPER_TOP_RIGHT": 5,
-          "BUMPER_BOTTOM_RIGHT": 7,
-          "STICK_PRESS_LEFT": 10,
-          "STICK_PRESS_RIGHT": 11,
-          "TOUCHSCREEN": 13
+      id: '54c-9cc-Wireless Controller',
+      buttons: {
+          ARROW_UP: 14,
+          ARROW_DOWN: 15,
+          ARROW_LEFT: 16,
+          ARROW_RIGHT: 17,
+          HOME: 12,
+          START: 9,
+          SELECT: 8,
+          CLUSTER_TOP: 3,
+          CLUSTER_LEFT: 0,
+          CLUSTER_RIGHT: 2,
+          CLUSTER_BOTTOM: 1,
+          BUMPER_TOP_LEFT: 4,
+          BUMPER_BOTTOM_LEFT: 6,
+          BUMPER_TOP_RIGHT: 5,
+          BUMPER_BOTTOM_RIGHT: 7,
+          STICK_PRESS_LEFT: 10,
+          STICK_PRESS_RIGHT: 11,
+          TOUCHSCREEN: 13,
       },
-      "sticks": {
-          "LEFT": { "xAxis": 0, "yAxis": 1 },
-          "RIGHT": { "xAxis": 2, "yAxis": 5 }
+      sticks: {
+          LEFT: { xAxis: 0, yAxis: 1 },
+          RIGHT: { xAxis: 2, yAxis: 5 },
       },
-      "analogs": {
-          "BUMPER_LEFT": 3,
-          "BUMPER_RIGHT": 4
-      }
+      analogs: {
+          BUMPER_LEFT: 3,
+          BUMPER_RIGHT: 4,
+      },
   };
 
   var c3 = {
-      "id": "Wireless Controller (STANDARD GAMEPAD Vendor: 054c Product: 09cc)",
-      "buttons": {
-          "ARROW_UP": 12,
-          "ARROW_DOWN": 13,
-          "ARROW_LEFT": 14,
-          "ARROW_RIGHT": 15,
-          "HOME": 16,
-          "START": 9,
-          "SELECT": 8,
-          "CLUSTER_TOP": 3,
-          "CLUSTER_LEFT": 2,
-          "CLUSTER_RIGHT": 1,
-          "CLUSTER_BOTTOM": 0,
-          "BUMPER_TOP_LEFT": 4,
-          "BUMPER_BOTTOM_LEFT": 6,
-          "BUMPER_TOP_RIGHT": 5,
-          "BUMPER_BOTTOM_RIGHT": 7,
-          "STICK_PRESS_LEFT": 10,
-          "STICK_PRESS_RIGHT": 11,
+      id: 'Wireless Controller (STANDARD GAMEPAD)',
+      buttons: {
+          ARROW_UP: 12,
+          ARROW_DOWN: 13,
+          ARROW_LEFT: 14,
+          ARROW_RIGHT: 15,
+          HOME: 16,
+          START: 9,
+          SELECT: 8,
+          CLUSTER_TOP: 3,
+          CLUSTER_LEFT: 2,
+          CLUSTER_RIGHT: 1,
+          CLUSTER_BOTTOM: 0,
+          BUMPER_TOP_LEFT: 4,
+          BUMPER_BOTTOM_LEFT: 6,
+          BUMPER_TOP_RIGHT: 5,
+          BUMPER_BOTTOM_RIGHT: 7,
+          STICK_PRESS_LEFT: 10,
+          STICK_PRESS_RIGHT: 11,
       },
-      "sticks": {
-          "LEFT": { "xAxis": 0, "yAxis": 1 },
-          "RIGHT": { "xAxis": 2, "yAxis": 3 }
+      sticks: {
+          LEFT: { xAxis: 0, yAxis: 1 },
+          RIGHT: { xAxis: 2, yAxis: 3 },
       },
-      "analogs": {}
+      analogs: {},
   };
 
   var c4 = {
-      "id": "[temp xbox id]",
-      "buttons": {
-          "ARROW_UP": 12,
-          "ARROW_DOWN": 13,
-          "ARROW_LEFT": 14,
-          "ARROW_RIGHT": 15,
-          "HOME": 16,
-          "START": 9,
-          "SELECT": 8,
-          "CLUSTER_TOP": 3,
-          "CLUSTER_LEFT": 2,
-          "CLUSTER_RIGHT": 1,
-          "CLUSTER_BOTTOM": 0,
-          "BUMPER_TOP_LEFT": 4,
-          "BUMPER_BOTTOM_LEFT": 6,
-          "BUMPER_TOP_RIGHT": 5,
-          "BUMPER_BOTTOM_RIGHT": 7,
-          "STICK_PRESS_LEFT": 10,
-          "STICK_PRESS_RIGHT": 11
+      id: '[temp xbox id]',
+      buttons: {
+          ARROW_UP: 12,
+          ARROW_DOWN: 13,
+          ARROW_LEFT: 14,
+          ARROW_RIGHT: 15,
+          HOME: 16,
+          START: 9,
+          SELECT: 8,
+          CLUSTER_TOP: 3,
+          CLUSTER_LEFT: 2,
+          CLUSTER_RIGHT: 1,
+          CLUSTER_BOTTOM: 0,
+          BUMPER_TOP_LEFT: 4,
+          BUMPER_BOTTOM_LEFT: 6,
+          BUMPER_TOP_RIGHT: 5,
+          BUMPER_BOTTOM_RIGHT: 7,
+          STICK_PRESS_LEFT: 10,
+          STICK_PRESS_RIGHT: 11,
       },
-      "sticks": {
-          "LEFT": { "xAxis": 0, "yAxis": 1 },
-          "RIGHT": { "xAxis": 2, "yAxis": 3 }
+      sticks: {
+          LEFT: { xAxis: 0, yAxis: 1 },
+          RIGHT: { xAxis: 2, yAxis: 3 },
       },
-      "analogs": {}
+      analogs: {},
   };
 
   /* Mappings for all supported controllers.
@@ -489,11 +489,18 @@
           };
       }
       stick(stick) {
-          const { gamepad } = this;
-          const { xAxis, yAxis } = findStickNumbers(gamepad, stick);
+          if (`${stick}` !== exports.STICK_TYPE.LEFT && `${stick}` !== exports.STICK_TYPE.RIGHT) {
+              throw new Error(`Invalid Stick type. Expected to be "${exports.STICK_TYPE.LEFT}" or "${exports.STICK_TYPE.RIGHT}" but received "${stick}"`);
+          }
+          const that = this;
           return {
               label: stick,
               query() {
+                  if (!that.isConnected()) {
+                      return new Vector2(0, 0);
+                  }
+                  const { gamepad } = that;
+                  const { xAxis, yAxis } = findStickNumbers(gamepad, stick);
                   return new Vector2(gamepad.axes[xAxis], gamepad.axes[yAxis]);
               },
           };
