@@ -98,11 +98,18 @@ export class Gamepad {
   }
 
   public stick(stick: STICK_TYPE): Control<Vector2> {
-    const {gamepad} = this
-    const {xAxis, yAxis} = findStickNumbers(gamepad, stick)
+    if (`${stick}` !== STICK_TYPE.LEFT && `${stick}` !== STICK_TYPE.RIGHT) {
+      throw new Error(`Invalid Stick type. Expected to be "${STICK_TYPE.LEFT}" or "${STICK_TYPE.RIGHT}" but received "${stick}"`)
+    }
+    const that = this
     return {
       label: stick,
       query() {
+        if (!that.isConnected()) {
+          return new Vector2(0, 0)
+        }
+        const {gamepad} = that
+        const {xAxis, yAxis} = findStickNumbers(gamepad, stick)
         return new Vector2(gamepad.axes[xAxis], gamepad.axes[yAxis])
       },
     }
